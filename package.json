@@ -5,8 +5,8 @@
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
-	"start": "electron-forge start",
-	"electron": "electron-forge start",
+    "start": "electron-forge start",
+    "electron": "electron-forge start",
     "ui": "ng serve",
     "package": "electron-forge package",
     "make": "electron-forge make",
