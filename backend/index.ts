@@ -1,4 +1,10 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Electron } from 'electron';
+import { enableLiveReload } from 'electron-compile';
+import * as isDev from 'electron-is-dev';
+
+if (isDev) {
+	enableLiveReload();
+}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -7,7 +13,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow: Electron.BrowserWindow | null;
 
 const createWindow = () => {
 	// Create the browser window.
@@ -17,7 +23,11 @@ const createWindow = () => {
 	});
 
 	// and load the index.html of the app.
-	mainWindow.loadURL(`file://${__dirname}/index.html`);
+	if (isDev) {
+		mainWindow.loadURL(`http://localhost:4200`);
+	} else {
+		mainWindow.loadURL(`file://${__dirname}/index.html`);
+	}
 
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools();
