@@ -7,13 +7,13 @@
   "scripts": {
     "start": "electron-forge start",
     "electron": "electron-forge start",
-    "ui": "ng serve",
+    "ui": "ng serve --aot",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "ng lint",
     "ng": "ng",
-    "build": "ng build",
+    "build": "ng build --environment=prod --aot --target=production",
     "test": "ng test",
     "e2e": "ng e2e"
   },
