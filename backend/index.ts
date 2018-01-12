@@ -1,6 +1,7 @@
 import { app, BrowserWindow, Electron } from 'electron';
 import { enableLiveReload } from 'electron-compile';
 import * as isDev from 'electron-is-dev';
+import { join } from 'path';
 
 if (isDev) {
 	enableLiveReload();
@@ -26,7 +27,7 @@ const createWindow = () => {
 	if (isDev) {
 		mainWindow.loadURL(`http://localhost:4200`);
 	} else {
-		mainWindow.loadURL(`file://${__dirname}/index.html`);
+		mainWindow.loadURL(join(`file://${__dirname}`, '../dist/index.html');
 	}
 
 	// Open the DevTools.
