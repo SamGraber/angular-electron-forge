@@ -78,6 +78,8 @@
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "codelyzer": "~3.2.0",
     "electron-forge": "^4.2.0",
     "electron-prebuilt-compile": "1.8.2-beta.3",
