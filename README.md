@@ -1,6 +1,7 @@
-# WritingTimelineNg
+# angular-electron-forge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+The configuration was then merged with electron-forge.
 
 ## Development server
 
